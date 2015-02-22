@@ -10,21 +10,21 @@ dataSet <- rbind(realSet, testSet)
 
 ## Extracts measurements on the mean and standard deviations
 
-featuresName = "UCI HAR Dataset/features.txt"
+featuresName = "./UCI HAR Dataset/features.txt"
 features <- read.table(featuresName, header = FALSE, stringsAsFactors = FALSE)
 
 meanStdFeatures <- features[grep("mean|std", features[, 2]), ]
 meanStdDataSet <- dataSet[, meanStdFeatures[, 1]]
 
-realSubjName = "UCI HAR Dataset/train/Subject_train.txt"
-testSubjName = "UCI HAR Dataset/test/Subject_test.txt"
+realSubjName = "./UCI HAR Dataset/train/Subject_train.txt"
+testSubjName = "./UCI HAR Dataset/test/Subject_test.txt"
 
 subjectRealSet <- read.table(realSubjName, header = FALSE)
 subjectTestSet <- read.table(testSubjName, header = FALSE)
 subjectDataSet <- rbind(subjectRealSet, subjectTestSet)
 
-yRealName = "UCI HAR Dataset/train/y_train.txt"
-yTestName = "UCI HAR Dataset/test/y_test.txt"
+yRealName = "./UCI HAR Dataset/train/y_train.txt"
+yTestName = "./UCI HAR Dataset/test/y_test.txt"
 
 activityRealSet <- read.table(yRealName, header = FALSE)
 activityTestSet <- read.table(yTestName, header = FALSE)
